@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>UI Developer</p>
+                <h1>Hi,I'm <span><i>Reshu Chowdary</i></span><br> From India</h1>
+            </div>
+        </div>
+    </div>
+    <!--------------------about---------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profile.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus consequuntur hic id? Temporibus
+                        impedit unde magni non reprehenderit rerum, dolor quasi hic quam dolorum ipsa nisi cum, nemo,
+                        eaque nobis?</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills" >
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web interfaces</li>
+                            <li><span>WEB DEVELOPMENT</span><br>Developing  Web apps</li>
+                            <li><span>APP DEVELOPMENT</span><br>Building Android/ios apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 - Current</span><br>Front-end-Developer at Mphasis Limited</li>
+                            <li><span>2022 - 2023</span><br>UI/UX Design & Development Training at Mphasis Learning Academy</li>
+                            <li><span>2021 - 2022</span><br>Java Internship at internshaala</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2017 - 2021</span><br>Bachelor of Technology at JNTUH</li>
+                            <li><span>2015 - 2017</span><br>Intermediate from Narayana Educational Institute </li>
+                            <li><span>2015</span><br>S.S.C from Santhinikethan High School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /*accessing elements by class name*/
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");//removes underline for skill
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");//removes skills block 
+            }
+            event.currentTarget.classList.add("active-link");// actives link(underline)
+            document.getElementById(tabname).classList.add("active-tab");//actives content block 
+        }
+    </script>
+</body>
+
+</html>
