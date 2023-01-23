@@ -14,13 +14,15 @@
         <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id ="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <img src="images/close_icon.png" class="close_icon" onclick="closemenu()">
                 </ul>
+                <img src="images/Hamburger_icon.png" class="Hamburger_icon" onclick="openmenu()">
             </nav>
             <div class="header-text">
                 <p>UI Developer</p>
@@ -70,21 +72,136 @@
             </div>
         </div>
     </div>
+    <!--------------------services------------------->
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My services</h1>
+            <div class="services-list">
+                <div >
+                    <img src="images/code_icon.png" class="code_icon">
+                    <h2>Web Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                         Iste ea molestias vel modi tenetur illo.
+                         Veritatis excepturi numquam dolores quo  rerum eos? Nostrum sint et beatae quae.
+                          Similique, ab molestiae!</p>
+                          <a href="#">Learn more</a>
+                </div>
+                <div >
+                    <img src="images/crop_icon.png" class="crop_icon">
+                    <h2>UI/UX Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                         Iste ea molestias vel modi tenetur illo.
+                         Veritatis excepturi numquam dolores quo  rerum eos? Nostrum sint et beatae quae.
+                          Similique, ab molestiae!</p>
+                          <a href="#">Learn more</a>
+                </div>
+                <div >
+                    <img src="images/app_icon.png" class="app_icon">
+                    <h2>App Design</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                         Iste ea molestias vel modi tenetur illo.
+                         Veritatis excepturi numquam dolores quo  rerum eos? Nostrum sint et beatae quae.
+                          Similique, ab molestiae!</p>
+                          <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------portfolio------------------->
+    <div id="portfolio">
+        <div class="container">
+            <div class="sub-title">My Work</div>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>Social media is a computer-based technology that facilitates the sharing of ideas, thoughts, and information 
+                        through the building of virtual networks and communities.</p>
+                        <a href="#"><img src="images/link_icon.png" class="link_icon"></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>music streaming application is to play music available in the databases of the service,
+                             compose custom playlists and suggest similar songs</p>
+                        <a href="#"><img src="images/link_icon.png" class="link_icon"></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>Mobile commerce (or m-commerce) describes purchasing from an online retailer's mobile device-optimized 
+                            website or software application ("app").</p>
+                        <a href="#"><img src="images/link_icon.png" class="link_icon"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!--------------------Contact------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+             <h1 class="sub-title">Contact Me</h1>
+             <p><img src="images/call_icon.png" class="call_icon">contact@example.com</p>
+             <p><img src="images/send_icon.png" class="send_icon">0123456789</p>
+             <div class="social-icons">
+                <a href="#"><img src="images/facebook_icon.png" class="facebook_icon"></a>
+                <a href="#"><img src="images/Insta_icon.png" class="Insta_icon"></a>
+                <a href="#"><img src="images/Twitter_icon.png" class="Twitter_icon"></a>
+                <a href="#"><img src="images/Linked_icon.png" class="Linked_icon"></a>
+            </div>
+            <a href="images/myCv.docx" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+            <form>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Kevin. Made with <img src="images/heart_icon.png" class="heart_icon">by K@reshu_Dev </p>
+    </div>
+</div>
     <script>
         /*accessing elements by class name*/
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
         function opentab(tabname){
+            //tablink iterates through skills exp edu 
             for(tablink of tablinks){
                 tablink.classList.remove("active-link");//removes underline for skill
             }
+            //tabcontent iterates through skills-cont exp-cont edu-cont
             for(tabcontent of tabcontents){
                 tabcontent.classList.remove("active-tab");//removes skills block 
             }
-            event.currentTarget.classList.add("active-link");// actives link(underline)
+            // when click on skills ( red-underline and content is removed),exp (red-underline-exp,skills and content -skills removed)
+            event.currentTarget.classList.add("active-link");//displays actives link(underline)
             document.getElementById(tabname).classList.add("active-tab");//actives content block 
         }
+    </script>
+    <script>
+        var side_menu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            side_menu.style.right = "0";
+        }
+        function closemenu(){
+            side_menu.style.right = "-200px";
+        }
+
     </script>
 </body>
 

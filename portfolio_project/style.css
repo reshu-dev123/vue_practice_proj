@@ -1,50 +1,58 @@
-*{
+* {
     margin: 0;
-    padding:0;
-    font-family:'poppins',sans-serif;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-body
-{
-   background: #080808;
-   color:#fff;
+html{
+    scroll-behavior: smooth;
 }
+
+body {
+    background: #080808;
+    color: #fff;
+}
+
 /* ----------------------------header------------- */
-#header
-{
-    width : 100%;
-    height : 100vh;
+#header {
+    width: 100%;
+    height: 100vh;
     background-image: url(images/background.jpg);
     background-size: cover;
     background-position: center;
 }
-.container{
+
+.container {
     padding: 10px 10%;
 }
-  nav {
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap; 
-}  
-.logo{
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
     width: 140px;
     border-radius: 65px;
 }
 
-nav ul li{
-    display: inline-block;/*horizontal align*/
+nav ul li {
+    display: inline-block;
+    /*horizontal align*/
     list-style: none;
     margin: 10px 20px;
 }
 
-nav ul li a{
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    position:relative;
+    position: relative;
 }
-nav ul li a::after{
+
+nav ul li a::after {
     content: '';
     position: absolute;
     background: #ff004f;
@@ -54,60 +62,73 @@ nav ul li a::after{
     bottom: -7px;
     transition: 0.5s;
 }
-nav ul li a:hover::after{
+
+nav ul li a:hover::after {
     width: 100%;
 }
+
 .header-text {
     font-size: 30px;
     margin-top: 20%;
 }
-.header-text h1{
-    font-size: 60px ;
+
+.header-text h1 {
+    font-size: 60px;
     margin-top: 20px;
 }
 
-.header-text h1 span{
+.header-text h1 span {
     color: #ff004f;
 
 }
+
 /* -------------about------------------ */
 
-#about{
+#about {
     padding: 80px 0;
     color: #ababab;
 }
-.row{
+
+.row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .about-col-1 img {
-    width : 100%;
+    width: 100%;
     border-radius: 15px;
 }
-.about-col-1{
-flex-basis: 35%;
+
+.about-col-1 {
+    flex-basis: 35%;
 }
-.about-col-2{
-flex-basis: 60%;
+
+.about-col-2 {
+    flex-basis: 60%;
 }
-.sub-title{
-    font-size: 50px ;
+
+.sub-title {
+    font-size: 50px;
     font-weight: 600;
     color: #fff;
 }
-.tab-titles{
-    display:flex;
-    margin:20px 0 40px;
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
 }
+
 .tab-links {
     margin-right: 50px;
     font-size: 18px;
     cursor: pointer;
     position: relative;
 }
-.tab-links::after{
-    content:'';
+
+.tab-links::after {
+    /* red underline for skills,exp,edu*/
+    content: '';
     width: 0;
     height: 3px;
     background: #ff004f;
@@ -118,21 +139,307 @@ flex-basis: 60%;
 }
 
 .tab-links.active-link::after {
+    /* red underline for skills*/
     width: 50%
 }
+
 .tab-contents ul li {
-list-style: none;
-margin: 10px 0;
+    list-style: none;
+    margin: 10px 0;
 }
-.tab-contents ul li span{
-color: #b54769;
-font-size: 14px;
+
+.tab-contents ul li span {
+    color: #b54769;
+    font-size: 14px;
 }
+
 /* Hides skills,exp,edu blocks */
-.tab-contents{
+.tab-contents {
     display: none;
 }
-/* Displays skill(active-tab) block */
-.tab-contents.active-tab{
+
+/* Displays skill(active-tab) block as active tab is defined only for skills class */
+.tab-contents.active-tab {
     display: block;
+}
+
+/*------services-----*/
+#services {
+    padding: 30px 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.code_icon,
+.crop_icon,
+.app_icon,.facebook_icon,.Insta_icon,.Twitter_icon,.Linked_icon,.Hamburger_icon,.close_icon{
+    background: white; 
+    border-radius: 12px;
+    width: 30px;
+}
+
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+
+/*------portfolio-----*/
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.work .layer a img {
+    background: #fff;
+    border-radius: 12px;
+    width: 25px;
+    margin-top: 25px ;
+}
+
+.layer{
+    width: 100%;
+    height: 0; /*pink layer disaappears*/
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 40px;
+    text-align: center;
+    transition: height 0.5s; /*pink layer transition*/
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Zoom in img  */
+.work:hover img{  
+    transform: scale(1.1);
+}
+/*pink layer over img moves up & down */
+.work:hover .layer{
+    height:100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
+/*----contact-----*/
+.contact-left{
+   flex-basis: 35%;
+}
+.contact-right{
+  flex-basis: 60%;
+}
+.call_icon,.send_icon,.heart_icon {
+    background: #ff004f;
+    border-radius: 3px;
+    margin-right: 5px;
+    width: 17px;
+    height: 17px;
+}
+
+.contact-left p{
+    margin: 20px 0px;
+}
+ 
+.contact-left p img{
+    margin-right: 5px;
+}
+
+.social-icons{
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover {
+    background-color:#ababab;
+    padding:  3px 3px;
+    border-radius: 7px;
+    transform: translateY(-5px);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f ;
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 100%;
+    border: 0 ;
+    outline: none;
+    background: #262626 ;
+    padding: 15px ;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+/*---------css for small screens---------*/
+
+nav .Hamburger_icon,.close_icon{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+       background-image: url(images/background.jpg);
+    }
+.header-text{
+    margin-top: 100%;
+    font-size: 16px;
+}
+.header-text h1{
+    font-size: 30px;
+}
+ nav .Hamburger_icon,.close_icon{
+display: block;
+font-size: 25px;
+}
+
+nav ul{
+    background: #ff004f;
+    position: fixed;
+    top:0;
+    right: -200px;/*hides side nav-bar*/
+    width: 200px; /* side nav-bar width*/
+    height: 100vh;
+    padding-top: 50px;
+    transition: right 0.5s;
+} 
+nav ul li{
+    display: block;
+    margin: 25px;
+}
+nav ul .Hamburger_icon,.close_icon{
+    position: absolute;
+    top:25px;
+    left: 25px;
+    cursor: pointer;
+}
+.sub-title{
+    font-size: 40px;
+}
+#about{
+    padding: 31px 0px;
+}
+.about-col-1,.about-col-2{
+    flex-basis: 100%;
+}
+.about-col-1{
+    margin-bottom: 30px;
+}
+.about-col-2{
+    font-size: 14px;
+}
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+}
+/* .contact-left{
+    flex-basis: 60%;
+} */
+.contact-right,.contact-left{
+    flex-basis: 100%;
+}
+#services{
+    padding: 5px 0px;
+}
+.row{
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    padding: 14px 45px;
+}
+/* form .btn2 {
+    margin: 20px 25px;
+} */
 }
