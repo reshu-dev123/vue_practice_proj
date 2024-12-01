@@ -1,0 +1,9 @@
+sorting Array 
+ sort uses compare fn (a,b)
+  If the result is negative, a is sorted before b. // (40,100)--> 40-100= -60 (res is -ve) hence 40,100
+  If the result is positive, b is sorted before a.//(100,1)--> 40 -1 = 39 (res is +ve) hence 1,40
+  If the result is 0, no changes are done with the sort order of the two values.
+
+  eG: const AscNumArr =   numbers.sort((a, b) => a - b)  // acending
+      const DscNumArr = numbers.sort((a, b) => b - a) //descending
+
