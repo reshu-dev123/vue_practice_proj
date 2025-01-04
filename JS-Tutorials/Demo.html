@@ -5,10 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS-TUTORIALS</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- <h2>linking External Javascript to html</h2> -->
+    <h2>linking External Javascript to html</h2>
     <p id="demo"></p>
-    <script src="loops.js"></script>
+    inside event handler
+    <input type="button" value="click" onclick="console.log('this inside event handler',this.style.background='green',this.style.color='white')"/>
+    <script src=".js"></script>
+    <!-- event bubbling and capturing -->
+    <div id="parent">
+        <h4>parent</h4>
+        <div id="child">
+            <h5>child</h5>
+            <button id="event1">event 1</button>
+            <button id="event2">event 2</button>
+        </div>
+    </div>
+    <!-- event delegation -->
+    <div>
+    <ul id="tasks">
+        <li>Task 1</li>
+        <li>Task 2</li>
+    </ul>
+    </div>
+    <br><br>
+    <!-- throtling and debouncing-->
 </body>
 </html>
