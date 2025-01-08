@@ -1,0 +1,44 @@
+sorting Array 
+ sort uses compare fn (a,b)
+  If the result is negative, a is sorted before b. // (40,100)--> 40-100= -60 (res is -ve) hence 40,100
+  If the result is positive, b is sorted before a.//(100,1)--> 40 -1 = 39 (res is +ve) hence 1,40
+  If the result is 0, no changes are done with the sort order of the two values.
+
+  eG: const AscNumArr =   numbers.sort((a, b) => a - b)  // acending
+      const DscNumArr = numbers.sort((a, b) => b - a) //descending
+
+
+--------------------------------------------------
+const { key, direction } = sortConfig;
+
+The destructuring syntax extracts the key and direction properties from the sortConfig object and creates two variables named key and direction. This is equivalent to:
+const key = sortConfig.key;
+const direction = sortConfig.direction;
+After this line, you can directly use key and direction variables without having to repeatedly access sortConfig.key or sortConfig.direction.
+---------------------------------------------------
+let direction = 'ascending';
+    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+
+1 Initial Click on "Title" Column:
+
+    sortConfig.key = 'title'
+    sortConfig.direction = 'ascending' (default)
+    Clicking "Title" sets direction = 'ascending' (default behavior).
+
+2  Second Click on "Title" Column:
+
+    sortConfig.key = 'title'
+    sortConfig.direction = 'ascending' (current state)
+    The condition in the if statement is true, so:
+    direction = 'descending';
+    
+3  Click on a Different Column, e.g., "Release Date":
+
+    sortConfig.key = 'release_date' (different column)
+    The if statement is false, so:
+    direction = 'ascending';
+---------------------------------------------------------
+     short-circuit evaluation in JavaScript 
+    condition on the left side (key === 'title') evaluates to true, the expression on the right side ('Title') is returned
