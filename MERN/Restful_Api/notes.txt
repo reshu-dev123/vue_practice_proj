@@ -1,0 +1,16 @@
+.then() : to ensure once after db connection is succesful then only display console msg.
+---------------------------------------------------------------------------------------------------
+ const{brandname} = req.body : destructuring jason obj data to be sent as req 
+   eg:  {
+       "brandname" : "Akruthi"
+       }
+----------------------------------------------------------------------------------------------------
+app.use(express.json()): //middleware for handling json res
+ ----------------------------------------------------------------------------------------------------
+  we are creating object brandname and sending it to schema BrandName
+  BrandName.find() is equivalent to SELECT * FROM BrandName
+  .find() is a Mongoose method used to retrieve multiple documents from a MongoDB collection
+       
+       const newData = new BrandName({brandname}):
+       return res.json(await BrandName.find())
+-------------------------------------------------------------------------------------------------------
